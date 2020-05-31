@@ -1,0 +1,754 @@
+/* CSS files add styling rules to your content */
+
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}
+{
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+}
+
+h1 {
+  font-style: italic;
+  color: #23446c;
+}
+
+
+h4 {
+  font-family:  'Open Sans', helvetica, arial, sans-serif;
+  color: #23446c !important;
+  font-size: 13px;
+  
+}
+
+a{
+  background-color:transparent; 
+  font-weight:bold; 
+  text-decoration:none !important;
+  color:#23446c!important; 
+}
+
+a:active,a:hover{
+  color:#b2c9c9 !important;
+  outline-width:0
+}
+
+b,strong{
+  font-weight:bolder
+}
+
+hr{
+  box-sizing:content-box;
+  height:0;
+  overflow:visible;
+  border:0;
+  border-top:1px solid #eee;
+  margin:20px 0
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.main ,#main{
+  transition:margin-left .4s,
+  z-index: 100!important
+}
+
+.teal{
+  color:#f9f5e4!important;
+  /*background-color:#2c78aa!important*/
+}
+
+.teal:hover{
+  color:#23446c!important;
+  /*background-color:#2c78aa!important*/
+}
+
+.menu-fixo {
+  overflow: hidden;
+  /*background-color: #2c78aa;*/
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0px; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  height: 150px;
+}
+
+
+
+.fa {
+  font-size: 25px !important;
+  text-decoration: none;
+  margin: 5px 2px;
+  padding-right: 15px !important;
+  padding-top: 25px !important;
+}
+
+.fa:hover {
+    color: #f9f5e4;
+}
+
+.fa-facebook {
+  color: #23446c;
+}
+
+.fa-twitter {
+  color: #23446c;
+}
+
+.fa-instagram {
+  color: #23446c;
+}
+
+.fa-soundcloud {
+  color: #23446c;
+}
+
+
+.my-button{
+  border:none;
+  display:inline-block;
+  padding:8px 18px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  /*white-space:nowrap*/
+}
+
+.my-button:hover{
+  /*color:#b2c9c9!important;*/
+}
+
+.my-button:disabled{
+  border:none;
+  cursor:not-allowed;
+  /*opacity:0.3*/
+}
+
+.my-hide-button:hover{
+  border:none;
+  color:#f9f5e4!important;
+  background-color:#23446c!important
+}
+
+/*
+.a:focus, .my-button:focus, .button:focus, .input:focus, .textarea:focus, .audio:focus{
+outline: none !important;
+}*/
+
+*:focus{
+outline: none !important;
+}
+
+.xlarge{
+  font-size:34px!important
+}
+
+.hide-large{
+
+}
+
+.large{
+  font-size:18px!important
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.logo-nav{
+  width:33%; 
+  padding: 25px, 5px !important; 
+}
+
+
+.sidebar{
+  height:100%;
+  width:500px !important;
+  background-color:#f9f5e4;
+  padding:40px; 
+  color:#23446c; 
+  position:fixed!important;
+  z-index:100;
+  overflow:auto
+}
+
+.sidebar::selection{
+  background-color:#23446c!important;
+  color:#f9f5e4 !important; 
+}
+
+.recorderoverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(35,68,108, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.recorderoverlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.recorderpopup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #f9f5e4;
+  color:#23446c; 
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.recordercontent{
+  font-size:15px;
+}
+
+.recorder-button{
+  display: block;
+  position: fixed !important;
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  background-color: transparent;
+  border: 0px;
+}
+
+.record{
+  width: 80px !important;
+}
+
+@media screen and (max-width: 700px){ 
+.recorder-button{
+  width: 80px !important;
+  /*bottom: 15px !important;*/
+  top: 15px !important;
+  right: 15px;
+  }
+}
+
+@media screen and (min-width: 700px){
+.recorder-button{
+  width: 90px !important;
+  top: 15px !important;
+  /*bottom: 15px !important;*/
+  right: 15px;
+  }
+}
+
+.recorder-button:hover{
+  oppacity: 20%;
+}
+
+.recorderpopup .recorderclose {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.recorderpopup .recorderclose:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .recorderbox{
+    width: 70%;
+  }
+  .recorderpopup{
+    width: 70%;
+  }
+}
+
+button{
+  border: 0px! important;
+  background-color: #23446c ;
+  color: #fff5e4;
+  font-size: 18px;
+  text-transform: uppercase !important; 
+  font-weight: bold;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.transparent-button{
+  border: 0px! important;
+  background-color: transparent !important;
+}
+
+
+a::selection{
+  background-color:#23446c !important;
+  color:#fff5e4  !important; 
+}
+
+p::selection{
+  background-color:#23446c !important;
+  color:#f9f5e4 !important; 
+}
+
+body::selection{
+  background-color:#23446c !important;
+  color:#f9f5e4 !important; 
+}
+
+li::selection{
+  background-color:#23446c !important;
+  color:#f9f5e4 !important; 
+}
+
+audio::-webkit-media-controls-panel
+{
+ background-color:#f9f5e4;
+}
+
+red {
+	color: red;
+}
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+ul {
+    padding-inline-start: 0px !important;
+}
+
+#controls {
+  display: flex;
+  margin-top: 2rem;
+  max-width: 28em;
+} 
+
+
+#formats {
+  margin-top: 0.5rem;
+  font-size: 80%;
+}
+
+#recordingsList{
+	max-width: 28em;
+}
+
+
+.bar .bar-item{
+  padding:8px 16px;
+  float:left;
+  width:auto;
+  border:none;
+  display:block;
+  outline:0
+}
+
+.bar-block .bar-item{
+  width:45px;
+  display:block;
+  padding:8px 16px;
+  text-align:left;
+  border:none;
+  white-space:normal;
+  float:none;
+  outline:0
+}
+.bar-block.center .bar-item{
+text-align:center
+}
+.block{
+  display:block;
+  width:100%
+}
+.responsive{
+  display:block;
+  overflow-x:auto
+}
+
+.bar-block .dropdown-hover,.bar-block .dropdown-click{width:10%}
+.bar-block .dropdown-hover .dropdown-content,.bar-block .dropdown-click .dropdown-content{min-width:100%}
+.bar-block .dropdown-hover .button,.bar-block .dropdown-click .button{
+  width:100%;
+  text-align:left;
+  padding:8px 16px;
+  color: red;
+}
+
+.bar-block .bar-item{
+  width:45px;
+  display:block;
+  padding:8px 16px;
+  text-align:left;
+  border:none;
+  white-space:normal;
+  float:none;
+  outline:0
+}
+
+
+
+.bar-block.center .bar-item{text-align:center}
+.block{
+  display:block;
+  width:100%
+}
+.responsive{
+  display:block;
+  overflow-x:auto
+}
+
+.card,.card-2{
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),
+    0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.animate-left{
+  position:relative;
+  animation:animateleft 0.4s
+}
+
+.modal {
+  display: none;
+  margin: 170px auto;
+  padding: auto;
+  background: #f9f5e4;
+  color:#23446c; 
+  width: 30%;
+  height: 30%;
+  /*position: relative;*/
+  transition: all 5s ease-in-out;
+}
+
+.modal-content {
+  background-color: #f9f5e4;
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+  text-align: -moz-center;
+}
+
+/* The Close Button */
+.close {
+  color: transparent;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-input{
+    margin: 5px;
+}
+
+@keyframes animateleft{
+  from{
+    left:-300px;
+    opacity:0
+  } 
+  to{
+    left:0;
+    opacity:1
+  }
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.logo-nav{
+  width:33%; 
+  padding: 25px, 5px !important; 
+}
+
+
+.marker {
+  background-image: url('https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2FLOGO_CORES-16.png?v=1590662908119');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-group {
+    border-radius: 0.5px !important;
+    background: #f9f5e4 !important;
+    color: red !important;
+    border: 0px !important;
+    box-shadow: 0px 0px !important;
+    margin-top: 20px !important;
+    margin-right: 20px !important;  
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.mapboxgl-ctrl-bottom-left{
+  display: none !important;
+}
+
+.mapboxgl-ctrl-bottom-right{
+  display: none !important;  
+}
+
+.mapboxgl-ctrl-compass{
+  display: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .mapboxgl-ctrl-group {
+      display: none !important;
+  }
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .column {
+    width: 70%;
+    position:sticky !important;
+  }
+  .logo-nav {
+    width: 70% !important;
+    position:sticky !important; 
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 900px){ 
+/*@media screen (max-width: 900px){  */
+  .column {
+    width: 50%;
+    position:sticky !important;
+  }
+  .logo-nav {
+    width: 60% !important;
+    position:sticky !important;
+  }
+}
+
+@media (max-width:1205px)
+{
+  .auto
+  {max-width:95%}
+}
+@media (max-width:600px)
+{
+  .modal-content{
+    margin:0 10px;
+    width:auto!important
+  }
+  .modal{
+    padding-top:30px}
+  .dropdown-hover.mobile .dropdown-content,.dropdown-click.mobile .dropdown-content{
+    position:relative
+  }	
+  .hide-small{
+  display:none!important
+  }
+  .mobile{
+    display:block;
+    width:100%!important
+  }
+  .bar-item.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{
+    text-align:center
+  }
+  .dropdown-hover.mobile,.dropdown-hover.mobile .btn,.dropdown-hover.mobile .button,.dropdown-click.mobile,.dropdown-click.mobile .btn,.dropdown-click.mobile .button{
+  width:100%
+  }
+  .bar-item.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center}
+}
+
+@media (max-width:768px){
+  .modal-content
+    {width:500px}
+  .modal
+    {padding-top:50px}
+}
+
+@media (min-width:9930px){
+  .modal-content
+    {width:900px}
+  .hide-large
+    {display:none!important}
+  .sidebar.collapse
+    {display:block!important}
+}
+
+@media (max-width:9092px) and (min-width:601px){
+    .hide-medium
+      {display:none!important}
+}
+
+@media (max-width:9902px){
+  .sidebar.collapse{display:none}
+  .main{margin-left:0!important;margin-right:0!important}
+  .auto{max-width:100%}
+}
+
+.top,.bottom{
+  position:fixed;width:100%;z-index:1
+}
+
+.top{
+  top:0
+}
+
+.bottom{
+  bottom:0
+}
+
+.overlay{
+  position:fixed;
+  display:none;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.5);
+  z-index:2
+}
+
+
+
+button,input{
+  overflow:visible
+}
+
+button{
+  position: sticky !important;
+}
+
+button,select{
+  text-transform:none
+}
+
+button,[type=button],[type=reset],[type=submit]{
+  -webkit-appearance:button
+}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{
+  border-style:none;padding:0
+}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{
+  outline:1px dotted ButtonText
+}
+
+
+@media (max-width:9902px)
+{
+  .main{
+    margin-left:0!important;
+    margin-right:0!important
+  }
+}
+
+
+
+/*AJUSTES MAPA*/
+
+    .mapboxgl-popup-content{
+        font: 400 10px/20px 'Open Sans', 'Helvetica Neue', Sans-serif !important;
+        color: #23446c !important;
+        background: #f9f5e4!important;
+    }
+
+    .mapboxgl-popup-tip{
+      color: #f9f2dc !important;
+    }
+
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Popup styling */
+
+    .mapboxgl-popup {
+      padding-bottom: 5px;
+    }
+
+    .mapboxgl-popup-close-button {
+      display: none;
+    }
+
+    .mapboxgl-popup-content {
+      font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+      padding: 0;
+      width: 250px;
+    }
+
+    .mapboxgl-popup-content-wrapper {
+      padding: 1%;
+    }
+
+    .mapboxgl-popup-content h3 {
+      background: rgb(61, 59, 59);
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      display: block;
+      padding: 15px;
+      font-weight: 700;
+      margin-top: -5px;
+    }
+
+    .mapboxgl-popup-content h4 {
+      margin: 0;
+      display: block;
+      padding: 10px 3px 10px 10px;
+      font-weight: 400;
+    }
+
+    .mapboxgl-container {
+      cursor: pointer;
+    }
+
+    .mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+      margin-top: 3px;
+    }
+
+    .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+      border-bottom-color: rgb(61, 59, 59);
+    }
