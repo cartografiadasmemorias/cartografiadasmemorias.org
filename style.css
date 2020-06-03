@@ -46,8 +46,9 @@ b,strong{
   font-weight:bolder
 }
 
-
 img::selection {background: transparent; !important}
+button::selection {background: transparent; !important}
+
 
 hr{
   box-sizing:content-box;
