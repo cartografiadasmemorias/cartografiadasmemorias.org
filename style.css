@@ -46,6 +46,9 @@ b,strong{
   font-weight:bolder
 }
 
+
+img::selection {background: transparent; !important}
+
 hr{
   box-sizing:content-box;
   height:0;
@@ -205,6 +208,7 @@ outline: none !important;
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index:1000;
 }
 .recorderoverlay:target {
   visibility: visible;
@@ -214,8 +218,8 @@ outline: none !important;
 .recorderpopup {
   margin: 70px auto;
   padding: 20px;
-  background: #f9f5e4;
-  color:#23446c; 
+  background: #23446c;
+  color:#f9f5e4; 
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
@@ -267,11 +271,9 @@ outline: none !important;
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #f9f5e4 !important;
 }
-.recorderpopup .recorderclose:hover {
-  color: #06D85F;
-}
+
 .popup .content {
   max-height: 30%;
   overflow: auto;
