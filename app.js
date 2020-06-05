@@ -128,7 +128,12 @@ function createDownloadLink(blob) {
 	reset.innerHTML = "Gravar Novamente";
 	reset.id = "reset";
 	reset.addEventListener("click", function (event) {
-		window.location.href = 'index.html';
+		li.removeChild(au);
+		li.removeChild(reset);
+		li.removeChild(upload);
+		recordButton.hidden = false;
+		stopButton.hidden = true;
+		//window.location.href = '#';
 	})
 
 	//add reset to the li
@@ -165,10 +170,9 @@ function confirmacao() {
 function enviar() {
 	var bairro = document.getElementById("bairro");
 	var cidade = document.getElementById("cidade");
-
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function (e) {
-		if (this.readyState === 4) {
+		if (this.readyState === 4 && this.status === 200) {
 			console.log("Server returned: ", e.target.responseText);
 		}
 	};
@@ -186,6 +190,7 @@ function enviar() {
 	}
 	xhr.open("POST", "upload.php", true);
 	xhr.send(fd);
+
 	fechar();
 
 	//Esconde todos os botões para em seguida exibir mensagem de confirmação de upload
