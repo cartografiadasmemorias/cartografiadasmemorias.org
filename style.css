@@ -63,20 +63,7 @@ a:active,a:hover{
   text-decoration:none !important;
 }
 
-a[data]:hover:after {
-  content: attr(data);
-  padding: 4px 8px;
-  color: #f9f5e4;
-  position: absolute;
-  left: 50px;
-  top: 10%;
-  white-space: nowrap;
-  z-index: 2;
-  border-radius: 5px ;
-  border: 0px solid;
-  border-color:#f9f5e4;
-  background: #981f3a;
-}
+
 
 .callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
 
@@ -105,24 +92,13 @@ hr{
   z-index: 100!important
 }
 
-.teal{
-  color:#f9f5e4!important;
-  /*background-color:#2c78aa!important*/
-}
-
-.teal:hover{
-  opacity: 0.8;
-  /*color:#b2c9c9!important;
-  background-color:#2c78aa!important*/
-}
-
 .menu-fixo {
   overflow: hidden;
   /*background-color: #2c78aa;*/
   position: fixed; /* Set the navbar to fixed position */
   top: 30px; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  height: 150px;
+  width: 70px; /* Full width */
+  height: 50px;
 }
 
 
@@ -192,6 +168,10 @@ outline: none !important;
 }*/
 
 *:focus{
+outline: none !important;
+}
+
+*:active{
 outline: none !important;
 }
 
@@ -271,7 +251,30 @@ outline: none !important;
   cursor: pointer; /* Add a mouse pointer on hover */
   background-color: transparent;
   border: 0px;
+  top: 120px !important;
+  left: 14px;
+  width: 40px;
 }
+.recorder-button:hover{
+  opacity: 0.9;
+}
+
+a[data]:hover:after {
+  content: attr(data);
+  padding: 4px 8px;
+  color: #f9f5e4;
+  position: absolute;
+  left: 50px;
+  top: 7px;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 0px ;
+  border: 0px solid;
+  border-color:#f9f5e4;
+  background: #981f3a;
+  opacity: 1 !important;
+}
+
 
 .record{
   width: 80px !important;
@@ -292,29 +295,7 @@ outline: none !important;
     }
 }
 
-@media screen and (max-width: 700px){ 
-.recorder-button{
-  width: 40px !important;
-  top: 80px !important;
-  left: 15px;
-  /*bottom: 15px !important;*/
-  /*right: 15px;*/
-  }
-}
 
-@media screen and (min-width: 700px){
-  .recorder-button{
-    width: 40px !important;
-    top: 100px !important;
-    left: 15px;
-    /*bottom: 15px !important;*/
-    /*right: 15px;*/
-    }
-  
-  .recorder-button:hover{
-    oppacity: 0.2 !important;
-  }
-}
 .geocoder-menu-item{
     color: #28C2FF;
 }
@@ -346,6 +327,23 @@ outline: none !important;
   }
 }
 
+
+/* MENU LATERAL */
+
+.sidenav {
+  height: 100%;
+  width: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:#f9f5e4;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* -FIM DO MENU LATERAL----- */
+
+
 button{
   border: 0px! important;
   background-color: #23446c ;
@@ -357,6 +355,11 @@ button{
 
 button:hover{
   opacity: 0.8;
+}
+
+button:active {
+    outline: none !important;
+    border: none !important;
 }
 
 img::selection {background: transparent; !important}
@@ -577,17 +580,47 @@ text-align:center
 }
 
 .mapboxgl-ctrl-group {
-    border-radius: 0.5px !important;
-    background: #f9f5e4 !important;
-    color: red !important;
+    border-radius: 0px !important;
+    background: #dab1af !important;
     border: 0px !important;
     box-shadow: 0px 0px !important;
-    margin-top: 20px !important;
-    margin-right: 20px !important;  
     position: fixed;
     /*bottom: 20px;*/
-    top: 160px;
-    left: 20px;
+    top: 200px;
+    left: 8px;
+    z-index: 99!important;
+    width:35px;
+}
+.mapboxgl-ctrl button.mapboxgl-ctrl-zoom-in  .mapboxgl-ctrl-icon{
+  opacity: 0;
+}
+
+.mapboxgl-ctrl button.mapboxgl-ctrl-zoom-out  .mapboxgl-ctrl-icon{
+  opacity: 0;
+}
+
+.mapboxgl-ctrl-zoom-out {
+    background-image: url("https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fzoom_out.png?v=1591537758958");
+    background-repeat:no-repeat;
+    background-position: center;
+    margin-top:2px;
+    margin-bottom:4px;
+    margin-left: 2px;
+    background-size: cover;
+    /*bottom: 20px;*/
+    z-index: 100!important;
+}
+
+
+.mapboxgl-ctrl-zoom-in {
+    background-image: url("https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fzoom_in.png?v=1591537759026");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 2px;
+    margin-top:2px;
+    /*bottom: 20px;*/
+    z-index: 100!important;
 }
 
 .mapboxgl-ctrl-bottom-left{

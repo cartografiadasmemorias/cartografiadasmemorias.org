@@ -62,24 +62,21 @@
     </p>
 </div>
   
-  
-  
-<div class="main" style="margin-left:0px">
-    <div class="teal">
+<div class="sidenav">
+    
       <div class="menu-fixo">
-          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()">&#9776;</button>
-          <!-- <button class="transparent-button my-button teal xlarge hide-large logo-nav" onclick="w3_open()"><img src="https://cdn.glitch.com/a5fe7e5d-6021-4147-a508-3f9c14aa252e%2Flogo8.png?v=1590611246270" align="left" width="100%"></button> --> 
-          
+          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fhamburguer_rosa.png?v=1591532711640" width="100%"></button>   
       </div>
-    </div>
-  
-  <div>
-	    <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2FLOGO_CORES-25.png?v=1590664189371" width="100%"></a>    
-  </div>
-  <div class="logo">
-    <img src="https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Flogo8.png?v=1591238713033" width="100%">
-  </div>
+    
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Frecorder_rosa.png?v=1591532711763" width="100%"></a>    
 
+     <div class="logo">
+          <img src="https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Flogo_cor.png?v=1591532712363" width="80%">
+     </div>
+
+</div>
+
+ 
 <div id="recorderpopup1" class="recorderoverlay">
 	<div class="recorderpopup">
 		<br><h2>ENVIE SEU RELATO</h2>
@@ -118,7 +115,7 @@
 </div>
   
   
-  
+
   
   <script>
     var geocoder = new MapboxGeocoder({
@@ -172,7 +169,8 @@
               //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fpunaise3.png?v=1591168517277',
               //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FCo%CC%81pia%20de%20gota%2Borelha.png?v=1591169258037',
               //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FPrancheta%201.png?v=1591171074397',
-              'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FgotaRVB-17333.png?v=1591237058710',
+              //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FgotaRVB-17333.png?v=1591237058710',
+              'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Falfinete-8k.png?v=1591319153566',
               function(error, image) {
               if (error) throw error;
               map.addImage('ear', image);
@@ -278,17 +276,18 @@
             ['interpolate', ['linear'], ['zoom'],
               0,
               //TAMANHO AO ZOOM 0
-              0.03,
+              0.18,
               6,
               //TAMANHO AO ZOOM 7
-              0.045,
+              0.25,
               15,
               //TAMANHO AO ZOOM 20
-              0.065,
+              0.35,
               24,
               //TAMANHO AO ZOOM 24
-              0.075
+              0.6
             ]);
+        
             
           });
 
@@ -299,9 +298,9 @@
     });
     
 
-      map.addControl(new mapboxgl.NavigationControl());
+      map.addControl(new mapboxgl.NavigationControl(), 'top-left');
       map.addControl(geocoder);
-    
+      document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
       document.getElementById('zoom').addEventListener('click', function() {
         map.zoomTo(19, { duration: 9000 });
       });
