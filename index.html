@@ -42,7 +42,7 @@
   position: absolute !important; right: 0; padding-right:15px;" href="http://cartografiadasmemorias.xyz/en">EN</a>
    <br><br>
    <img style="display: inline-block; width:10%; vertical-align:top !important" src="https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2FLOGO_CORES-08.png?v=1590619201597">
-   <a style="display: inline-block" href="https://bit.ly/3eT5VTn" target="_blank"> Envie um áudio com seu relato<br>21 99658-5407</a><br><br>
+   <a style="display: inline-block; color: #23446c;" href="https://bit.ly/3eT5VTn" target="_blank"> Envie um áudio com seu relato<br>21 99658-5407</a><br><br>
       <li>Os áudios devem ter no máximo 5 minutos</li>
       <li>Informe sua localização aproximada</li> 
       <li>Não é necessário se identificar</li>
@@ -65,13 +65,13 @@
 <div class="sidenav">
     
       <div class="menu-fixo">
-          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fhamburguer_rosa.png?v=1591532711640" width="100%"></button>   
+          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "/media/hamburguer_rosa.png" width="100%"></button>   
       </div>
     
-      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Frecorder_rosa.png?v=1591532711763" width="100%"></a>    
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="/media/recorder_rosa.png" width="100%"></a>    
 
      <div class="logo">
-          <img src="https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Flogo_cor.png?v=1591532712363" width="80%">
+          <img src="/media/logo_cor.png" width="80%">
      </div>
 
 </div>
@@ -85,8 +85,8 @@
 		<div class="recordercontent">
 			Clique abaixo para gravar um áudio de até 5 minutos.<br><br>
        <div id="controls">
-         <button class="transparent-button"  id="recordButton"><img src="https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2FLOGO_CORES-25.png?v=1590664189371"  class="center"></button>
-         <button class="transparent-button" id="stopButton" hidden><img src="https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fstop.gif?v=1590962448755"  class="center"></button>
+         <button class="transparent-button"  id="recordButton"><img src="/media/rec.png"  class="center"></button>
+         <button class="transparent-button" id="stopButton" hidden><img src="/media/rec_gif.gif"  class="center"></button>
       </div>
 		</div>
     <ul style="list-style: none;" id="recordingsList"></ul>
@@ -164,13 +164,7 @@
           map.on('load', function () {
             
             map.loadImage(
-              //'https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2FLOGO_CORES-16.png?v=1590662908119',
-              //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fpunaise2.png?v=1591167898900' ,
-              //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Fpunaise3.png?v=1591168517277',
-              //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FCo%CC%81pia%20de%20gota%2Borelha.png?v=1591169258037',
-              //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FPrancheta%201.png?v=1591171074397',
-              //'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FgotaRVB-17333.png?v=1591237058710',
-              'https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2Falfinete-8k.png?v=1591319153566',
+             '/media/gota_final.png',
               function(error, image) {
               if (error) throw error;
               map.addImage('ear', image);

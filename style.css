@@ -11,14 +11,14 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{disp
 
 @font-face {
 font-family: 'Stilu';
-src: url('https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FStilu-Regular.otf?v=1591232120988') format('opentype');
+src: url('/stilu/Stilu-Regular.otf') format('opentype');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'Stilu';
-src: url('https://cdn.glitch.com/a322fddf-e1a0-4b92-b1ef-c82afcaad9ba%2FStilu-SemiBold.otf?v=1591232120664') format('opentype');
+src: url('/stilu/Stilu-SemiBold.otf') format('opentype');
 font-weight: bold;
 
 }
@@ -50,11 +50,12 @@ h4 {
   
 }
 
-a{
+a
+{
   background-color:transparent; 
   font-weight:bold; 
   text-decoration: none !important;
-  color: black !important; 
+  color: #23446c !important; 
 }
 
 a:active,a:hover{
@@ -207,6 +208,9 @@ outline: none !important;
   position:fixed!important;
   z-index:100;
   overflow:auto
+}
+.sidebar .a{
+  color:#23446c !important; 
 }
 
 .sidebar::selection{
