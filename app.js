@@ -13,6 +13,7 @@ var filename;
 var audio;
 var position;
 var mic;
+var enviado = false;
 
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
@@ -84,6 +85,7 @@ function startRecording() {
 		permissaomicrofone.hidden = false;//exibe msg caso a pessoa bloqueie o microfone
 		recorderinstructions.hidden = true;//Exibe gravador e demais elementos vinculados a ele
 		mic = false;
+		closeButton.hidden = false;
 	});
 }
 
@@ -223,6 +225,8 @@ function enviar() {
 	reset.hidden = true;
 	upload.hidden = true;
 	recordingsList.hidden = true;
+	enviado = true;
+	closeButton.hidden = false;
 
 	//Limpa a recordingsList
 	var li = document.getElementById("recordingsList");
@@ -251,6 +255,7 @@ function getPosition(position) {
 function step(param){
 	if (param == 1){
 		const x =  this.getLocation();
+		closeButton.hidden = true;
 	} else if (param == 2){
 		resetRecorder();
 		recorderlocation.hidden = true; //esconde formulario cidade-bairro
@@ -261,7 +266,7 @@ function step(param){
 
 // When the user clicks on <span> (x), close the modal
 function fechar() {
-	if (mic != false) {
+	if (mic != false && enviado == true) {
 		recorderinitinstructions.hidden = false;
 		recorderinstructions.hidden = true;
 		permissaomicrofone.hidden = true;
