@@ -16,10 +16,10 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
   
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
@@ -65,51 +65,56 @@
 <div class="sidenav">
     
       <div class="menu-fixo">
-          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "/media/hamburguer_rosa.png" width="100%"></button>   
+          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "media/hamburguer_rosa.png" width="100%"></button>   
       </div>
     
-      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="/media/recorder_rosa.png" width="100%"></a>    
-
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/recorder_rosa.png" width="100%"></a>    
+      
      <div class="logo">
-          <img src="/media/logo_cor.png" width="80%">
+          <img src="media/logo_cor.png" width="80%">
      </div>
 
 </div>
 
  
 <div id="recorderpopup1" class="recorderoverlay">
-	<div class="recorderpopup">
-		<br><h2>ENVIE SEU RELATO</h2>
-     
-		<a class="recorderclose" href="#">&times;</a>
-		<div class="recordercontent">
-			Clique abaixo para gravar um áudio de até 5 minutos.<br><br>
+	<div class="recorderpopup">     
+    <a class="recorderclose" href="#" onclick="fechar()">&times;</a>
+    <div class="recordercontent" id="recordermsg">
+      <h2 id="mensagem"></h2><!--O Js preenche esse campo com a mensagem de retorno da operacao de gravacao-->
+    </div>
+    <div class="recordercontent" id="recorderinitinstructions">
+      <br>
+      <p>O áudio de seu relato terá no máximo 5 minutos de duração.</p>
+      <p>Não é necessário se identificar.</p>
+      <p>Para adicionarmos seu relato ao mapa sonoro informe sua localidade: cidade e bairro, ou permita que o seu dispositivo acesse sua localização.</p>
+      <p>Ao enviar o áudio você concorda com os termos e autoriza o uso não-comercial de seu relato.</p>
+      <button onclick="step(1)">Próximo</button>
+    </div>
+		<div class="recordercontent" id="recorderinstructions" hidden>
+      <br><h2 id="msgstart">Clique para gravar</h2>
+      <br><h2 id="msgstop" hidden>Clique para finalizar</h2>
        <div id="controls">
-         <button class="transparent-button"  id="recordButton"><img src="/media/rec.png"  class="center"></button>
-         <button class="transparent-button" id="stopButton" hidden><img src="/media/rec_gif.gif"  class="center"></button>
+         <button class="transparent-button"  id="recordButton"><img src="media/rec.png"  class="center"></button>
+         <button class="transparent-button" id="stopButton" hidden><img src="media/rec_gif.gif"  class="center"></button>
       </div>
-		</div>
+      <h1 id="counter">00:00</h1>
+      <h2 id="msgmax">(máx. 5 minutos)</h2>
+    </div>
+    <div class="recordercontent" id="recorderlocation" hidden>
+     <label>Cidade:</label></br>
+     <input id="cidade" type="text"></input></br>
+     <label>Bairro:</label></br>
+     <input id="bairro" type="text"></input><br><br>
+     <button onclick="step(2)">Próximo</button>
+    </div>
+    <div class="recordercontent" id="permissaomicrofone" hidden>
+      <h2 id="microfonenegado">Altere a permissão de seu microfone para permitir que nosso gravador possa acessá-lo. Recarregue a página e tente novamente.</h2>
+    </div>
     <ul style="list-style: none;" id="recordingsList"></ul>
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
   	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="app.js"></script>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <i class="close" onclick="fechar()">&times;</i>
-        <label>Bairro:</label>
-        <div class="modal-input">
-          <input id="bairro" type="text"><input>
-        </div>
-        <label>Cidade:</label>
-        <div class="modal-input">
-          <input id="cidade" type="text"><input>
-        </div>
-        <button id="enviar" onclick="enviar()">enviar</button>
-      </div>
-
-    </div>
 	</div>
   
 </div>
@@ -164,7 +169,7 @@
           map.on('load', function () {
             
             map.loadImage(
-             '/media/gota_final.png',
+             'media/gota_final.png',
               function(error, image) {
               if (error) throw error;
               map.addImage('ear', image);

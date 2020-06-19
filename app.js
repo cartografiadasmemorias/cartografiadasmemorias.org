@@ -12,6 +12,7 @@ var audioContext //audio context to help us record
 var filename;
 var audio;
 var position;
+var mic;
 
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
@@ -32,8 +33,14 @@ function startRecording() {
 
 	recordButton.hidden = true;
 	stopButton.hidden = false;
+	
+	var msgstart = document.getElementById("msgstart");
+	var msgstop = document.getElementById("msgstop");
 
-
+	//Alterna instruições para iniciar e parar gravação
+	msgstart.hidden = true;
+	msgstop.hidden = false;
+	
 	/*
     	We're using the standard promise based getUserMedia() 
     	https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
@@ -63,14 +70,20 @@ function startRecording() {
 		rec = new Recorder(input, { numChannels: 1 })
 
 		//start the recording process
-		rec.record()
+		rec.record();
 
 		console.log("Recording started");
 
+		//Zera e inicia o cronômetro na sequencia
+		stop();
+		start();
+
 	}).catch(function (err) {
 		//enable the record button if getUserMedia() fails
-		recordButton.disabled = false;
-		stopButton.disabled = true;
+		console.log("Permissão negada microfone");
+		permissaomicrofone.hidden = false;//exibe msg caso a pessoa bloqueie o microfone
+		recorderinstructions.hidden = true;//Exibe gravador e demais elementos vinculados a ele
+		mic = false;
 	});
 }
 
@@ -83,6 +96,13 @@ function stopRecording() {
 	//tell the recorder to stop the recording
 	rec.stop();
 
+	//zera o cronômetro
+	stop();
+
+	//Esconde o cronometro
+	var counter = document.getElementById("counter");
+	counter.hidden = true;
+
 	//stop microphone access
 	gumStream.getAudioTracks()[0].stop();
 
@@ -92,6 +112,8 @@ function stopRecording() {
 	//Ocultar botões
 	recordButton.hidden = true;
 	stopButton.hidden = true;
+	msgmax.hidden = true;
+	msgstop.hidden = true;
 }
 
 function createDownloadLink(blob) {
@@ -114,6 +136,9 @@ function createDownloadLink(blob) {
 	//link.download = filename+".wav"; //download forces the browser to donwload the file using the  filename
 	//link.innerHTML = "Save to disk";
 
+	//Define id para o elemento da lista. 
+	li.id = "elemento_audio";
+
 	//add the new audio element to li
 	li.appendChild(au);
 
@@ -133,6 +158,10 @@ function createDownloadLink(blob) {
 		li.removeChild(upload);
 		recordButton.hidden = false;
 		stopButton.hidden = true;
+		counter.hidden = false;
+		msgstart.hidden = false;
+		msgstop.hidden = true;
+		msgmax.hidden = false;
 		//window.location.href = '#';
 	})
 
@@ -143,10 +172,10 @@ function createDownloadLink(blob) {
 	//upload link
 	var upload = document.createElement('button');
 	//upload.href="#";
-	upload.innerHTML = "Enviar !";
+	upload.innerHTML = "Enviar";
 	upload.id = "upload";
-	upload.addEventListener("click", async (event) => {
-		const x = await this.getLocation();
+	upload.addEventListener("click", function (event) {
+		enviar();
 	})
 
 	li.appendChild(document.createTextNode(" "))//add a space in between
@@ -154,32 +183,31 @@ function createDownloadLink(blob) {
 
 	//add the li element to the ol
 	recordingsList.appendChild(li);
-
-}
-
-// When the user clicks on <span> (x), close the modal
-function fechar() {
-	var modal = document.getElementById("myModal");
-	modal.style.display = "none";
-}
-
-function confirmacao() {
+	reset.hidden = false;
+	upload.hidden = false;
+	recordingsList.hidden = false;
 
 }
 
 function enviar() {
+	recorderinstructions.hidden = true;//Esconde as instrucoes de gravação para que apenas o retorno do envio seja exibido
+	mensagem.hidden = false;//Exibe mensagem de agradecimento/confirmacao
+
 	var bairro = document.getElementById("bairro");
 	var cidade = document.getElementById("cidade");
 	var xhr = new XMLHttpRequest();
-	xhr.onload = function (e) {
-		if (this.readyState === 4 && this.status === 200) {
-			console.log("Server returned: ", e.target.responseText);
+	xhr.onreadystatechange = function (e) {
+		var mensagem = document.getElementById("mensagem");
+		if (e.target.readyState === 4 && e.target.status === 200) {
+			//mensagem.innerHTML = e.target.statusText;
+			mensagem.innerHTML = "Agradecemos sua contribuição. Seu relato será adicionado ao mapa sonoro de memórias sobre a pandemia da Covid-19.";
+		}else {
+			mensagem.innerHTML = "Ops! Houve algum problema. Tente novamente!";
 		}
 	};
 	var fd = new FormData();
 	fd.append("audio_data", audio, filename);
 	if (this.position) {
-		console.log(this.position.coords.latitude)
 		fd.append("permission", true);
 		fd.append("latitude", this.position.coords.latitude);
 		fd.append("longitude", this.position.coords.longitude);
@@ -191,12 +219,17 @@ function enviar() {
 	xhr.open("POST", "upload.php", true);
 	xhr.send(fd);
 
-	fechar();
-
 	//Esconde todos os botões para em seguida exibir mensagem de confirmação de upload
 	reset.hidden = true;
 	upload.hidden = true;
-	recordingsList.hidden = true;	
+	recordingsList.hidden = true;
+
+	//Limpa a recordingsList
+	var li = document.getElementById("recordingsList");
+
+	while (li.firstChild) {
+		li.removeChild(li.firstChild);
+	}
 }
 
 function getLocation() {
@@ -207,14 +240,45 @@ function getLocation() {
 
 function getPosition(position) {
 	console.log("Latitude: " + position.coords.latitude +
-		"<br>Longitude: " + position.coords.longitude);
+		"\n Longitude: " + position.coords.longitude);
 
 	this.position = position;
-	this.enviar();
+	//Após coletar as coordenadas segue para a tela do gravador
+	step(2);
+}
+
+//Mexer aqui
+function step(param){
+	if (param == 1){
+		const x =  this.getLocation();
+	} else if (param == 2){
+		resetRecorder();
+		recorderlocation.hidden = true; //esconde formulario cidade-bairro
+		recorderinitinstructions.hidden = true;
+		//recorderinstructions.hidden = false;	
+	}
+}
+
+// When the user clicks on <span> (x), close the modal
+function fechar() {
+	if (mic != false) {
+		recorderinitinstructions.hidden = false;
+		recorderinstructions.hidden = true;
+		permissaomicrofone.hidden = true;
+		mensagem.hidden = true;
+	}
+}
+
+function resetRecorder(){
+	recorderinstructions.hidden = false;
+	msgstart.hidden = false;
+	recordButton.hidden = false;
+	counter.hidden = false;
+	msgmax.hidden = false;
 }
 
 function showError(error) {
-	var modal = document.getElementById("myModal");
+	var loc = document.getElementById("recorderlocation");
 	switch (error.code) {
 		case error.PERMISSION_DENIED:
 			console.log("Usuário rejeitou a solicitação de Geolocalização.");
@@ -230,5 +294,54 @@ function showError(error) {
 			break;
 	}
 
-	modal.style.display = "block";
+	loc.hidden = false;
+	recorderinitinstructions.hidden = true;
+	var bairro = document.getElementById("bairro");
+	var cidade = document.getElementById("cidade");
+}
+
+"use strict"
+
+var mm = 0;
+var ss = 0;
+
+var tempo = 1000;//Quantos milésimos valem 1 segundo?
+var cron;
+
+//Inicia o temporizador
+function start() {
+    cron = setInterval(() => { timer(); }, tempo);
+}
+
+//Para o temporizador mas não limpa as variáveis
+function pause() {
+    clearInterval(cron);
+}
+
+//Para o temporizador e limpa as variáveis
+function stop() {
+    clearInterval(cron);
+    mm = 0;
+    ss = 0;
+
+    document.getElementById('counter').innerText = '00:00';
+}
+
+//Faz a contagem do tempo e exibição
+function timer() {
+    ss++; //Incrementa +1 na variável ss
+
+    if (ss == 59) { //Verifica se deu 59 segundos
+        ss = 0; //Volta os segundos para 0
+        mm++; //Adiciona +1 na variável mm
+    }
+
+    //Cria uma variável com o valor tratado HH:MM:SS
+    var format = (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
+    
+    //Insere o valor tratado no elemento counter
+    document.getElementById('counter').innerText = format;
+
+    //Retorna o valor tratado
+    return format;
 }
