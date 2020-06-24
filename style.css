@@ -29,6 +29,7 @@ body {
   padding: 0;
   line-height: 17px;
   letter-spacing: 0.7px;
+  color: #23446c !important;
 }
 }
 }
@@ -39,6 +40,12 @@ h1 {
   line-height: 17px;
 }
 
+h2 {
+  font-size: 30px !important;
+  font-style: bold !important;
+  color: #f9f5e4;
+  line-height: 17px;
+}
 
 h4 {
   font-family:  'Stilu', helvetica, arial, sans-serif;
@@ -50,21 +57,28 @@ h4 {
   
 }
 
-a
-{
-  background-color:transparent; 
+a{
   font-weight:bold; 
-  text-decoration: none !important;
+  text-decoration:none; 
+}
+
+a:visited{
+  font-weight:bold; 
+  text-decoration:none;
   color: #23446c !important; 
 }
 
-a:active,a:hover{
+a:active{
   color:#b2c9c9 !important;
   outline-width:0;
   text-decoration:none !important;
 }
 
-
+a:hover{
+  color:#b2c9c9 !important;
+  outline-width:0;
+  text-decoration:none !important;
+}
 
 .callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
 
@@ -77,7 +91,7 @@ hr{
   height:0;
   overflow:visible;
   border:0;
-  border-top:1px solid #eee;
+  border-top:1px solid #23446c;
   margin:20px 0
 }
 
@@ -92,16 +106,6 @@ hr{
   transition:margin-left .4s,
   z-index: 100!important
 }
-
-.menu-fixo {
-  overflow: hidden;
-  /*background-color: #2c78aa;*/
-  position: fixed; /* Set the navbar to fixed position */
-  top: 30px; /* Position the navbar at the top of the page */
-  width: 70px; /* Full width */
-  height: 50px;
-}
-
 
 
 .fa {
@@ -189,8 +193,9 @@ outline: none !important;
 }
 
 .column {
-  float: left;
+  float: right;
   width: 33.33%;
+  text-align: center;
 }
 
 .logo-nav{
@@ -206,16 +211,63 @@ outline: none !important;
   padding:40px; 
   color:#23446c; 
   position:fixed!important;
-  z-index:100;
+  z-index:0;
   overflow:auto
-}
-.sidebar .a{
-  color:#23446c !important; 
 }
 
 .sidebar::selection{
   background-color:#23446c!important;
   color:#f9f5e4 !important; 
+}
+
+@media screen and (max-width: 700px){ 
+  .sidebar{
+     width:100% !important;
+  }
+  .sidebarmenu{
+    position: absolute;
+    left: 0px;
+    padding: 0px 40px;
+    width: 100%;
+    height: 600px;
+    background-color: #f9f5e4;
+    top: 210px;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 700px){ 
+
+.sidebarmenu{
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  padding: 0px 40px;
+  background-color: #f9f5e4;
+  top: 210px;
+  left: 80px;
+  z-index: -1;
+}
+
+}
+
+.column {
+  float: center;
+  width: 100px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  width: 100%;
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 700px){ 
+    .logo{
+      display: none;
+    }
 }
 
 .recorderoverlay {
@@ -237,46 +289,25 @@ outline: none !important;
 
 .recorderpopup {
   margin: 70px auto;
-  padding: 20px;
+  padding: 30px;
   background: #23446c;
-  color:#f9f5e4; 
-  width: 30%;
+  border: 2px solid #d9b0af;
+  color:#d9b0af; 
+  width: 500px;
+  height: 400px !important;
   position: relative;
   transition: all 5s ease-in-out;
-}
-.recordercontent{
-  font-size:15px;
+  font-weight: bold;
+  font-size: 13px !important;
 }
 
-.recorder-button{
-  display: block;
-  position: fixed !important;
-  z-index: 99; /* Make sure it does not overlap */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  background-color: transparent;
-  border: 0px;
-  top: 120px !important;
-  left: 14px;
-  width: 40px;
+.recordercontent{
+  padding: 20px 50px;
 }
+
+
 .recorder-button:hover{
   opacity: 0.9;
-}
-
-a[data]:hover:after {
-  content: attr(data);
-  padding: 4px 8px;
-  color: #f9f5e4;
-  position: absolute;
-  left: 50px;
-  top: 7px;
-  white-space: nowrap;
-  z-index: 2;
-  border-radius: 0px ;
-  border: 0px solid;
-  border-color:#f9f5e4;
-  background: #981f3a;
-  opacity: 1 !important;
 }
 
 
@@ -299,13 +330,10 @@ a[data]:hover:after {
     }
 }
 
-
 .geocoder-menu-item{
     color: #28C2FF;
 }
   
-
-
 .recorderpopup .recorderclose {
   position: absolute;
   top: 20px;
@@ -317,32 +345,259 @@ a[data]:hover:after {
   color: #f9f5e4 !important;
 }
 
+.input {
+  background-color: transparent !important;
+  border: transparent !important;
+  border-bottom: 5px solid red !important;
+}
+
 .popup .content {
   max-height: 30%;
   overflow: auto;
 }
 
-@media screen and (max-width: 700px){
-  .recorderbox{
-    width: 70%;
-  }
-  .recorderpopup{
-    width: 70%;
-  }
+.sidenav{
+  z-index:1;
 }
 
 
 /* MENU LATERAL */
 
-.sidenav {
-  height: 100%;
-  width: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color:#f9f5e4;
-  overflow-x: hidden;
-  padding-top: 20px;
+@media screen and (max-width: 700px){ 
+  
+   .recorderbox{
+      width: 70%;
+    }
+    .recorderpopup{
+      width: 70%;
+    }
+    .sidenav{
+     display:none;
+    }
+    .sidenav-top{
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color:#f9f5e4;
+      padding-top: 20px;
+      z-index:0;
+    }
+   .sidenav-bottom{
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      background-color:#f9f5e4;
+      padding-top: 20px;
+      z-index:0;
+    } 
+  .sidebar{
+
+  padding-left: 10px;
+  padding-right: 10px;
+      z-index:10;
+
+}
+  
+    .menu-fixo {
+      overflow: hidden;
+      /*background-color: #2c78aa;*/
+      position: fixed; /* Set the navbar to fixed position */
+      top: 5px; /* Position the navbar at the top of the page */
+      width: 70px; /* Full width */
+      height: 50px;
+     }
+  
+    .recorder-button{
+      display: block;
+      position: fixed !important;
+      z-index: 0; /* Make sure it does not overlap */
+      cursor: pointer; /* Add a mouse pointer on hover */
+      background-color: transparent;
+      border: 0px;
+      bottom: 10px !important;
+      right: 24px;
+      width: 40px;
+    }
+
+    .lang{
+        display: none;
+      }
+  
+    .lang-mobile{
+        position: absolute;
+        padding-bottom:40px !important;
+        padding-left: 20px;
+        z-index:100;
+      }
+  
+    .text-right{
+      color: #23446c;
+      right: 80px;
+      position: absolute;
+    }
+
+    .loadpopup{
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;  
+    }
+
+    .loadpopup .loadpopuptext{
+      visibility: visible;
+      display: block;
+      width: 180px;
+      border: solid 1px #23446c;
+      background-color: #981f3a;
+      color: #f9f5e4 ;
+      padding: 20px;
+      text-align: left;
+      position: fixed;
+      z-index: 11 !important;
+      bottom: 60px !important;
+      right: 45px;
+      margin-left: -80px;
+    }
+
+    .loadpopup .loadpopuptext::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: 0%;
+      margin-left: -20px;
+      border-width: 10px;
+      border-style: solid;
+      border-color:  transparent #981f3a transparent transparent;
+    }
+
+    .loadpopup .show {
+      visibility: hidden;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+
+  
+}
+
+@media screen and (min-width: 700px){ 
+  
+  a[data]:hover:after {
+  content: attr(data);
+  padding: 4px 8px;
+  color: #f9f5e4;
+  position: absolute;
+  left: 50px;
+  top: 7px;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 0px ;
+  border: 0px solid;
+  border-color:#f9f5e4;
+  background: #981f3a;
+  opacity: 1 !important;
+}
+  
+  .sidenav {
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:#f9f5e4;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav-top{
+     display:none;
+  }
+  .sidenav-bottom{
+      display:none;
+  }
+  
+  .sidebar{
+  padding-left: 80px;
+  padding-right: 10px;
+}
+  
+  
+  .menu-fixo {
+  overflow: hidden;
+  /*background-color: #2c78aa;*/
+  position: fixed; /* Set the navbar to fixed position */
+  top: 30px; /* Position the navbar at the top of the page */
+  width: 70px; /* Full width */
+  height: 50px;
+ }
+  .recorder-button{
+  display: block;
+  position: fixed !important;
+  z-index: 0; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  background-color: transparent;
+  border: 0px;
+  top: 120px !important;
+  left: 14px;
+  width: 40px;
+}
+  
+  .lang{
+    padding-left:25px; 
+    padding-top:270px;
+  }
+
+  .lang-mobile{
+    display: none;
+  }
+  .loadpopup{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;  
+}
+
+.loadpopup .loadpopuptext{
+  visibility: visible;
+  width: 180px;
+  border: solid 1px #23446c;
+  background-color: #981f3a;
+  color: #f9f5e4 ;
+  padding: 20px;
+  text-align: left;
+  position: absolute;
+  z-index: 11 !important;
+  top: 95px !important;
+  left: 155px;
+  margin-left: -80px;
+}
+
+.loadpopup .loadpopuptext::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  margin-left: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color:  transparent #981f3a transparent transparent;
+}
+
+.loadpopup .show {
+  visibility: hidden;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+  
 }
 
 /* -FIM DO MENU LATERAL----- */
@@ -350,12 +605,34 @@ a[data]:hover:after {
 
 button{
   border: 0px! important;
-  background-color: #23446c ;
+  background-color: #d9b0af ;
+  color: #23446c;
+  font-size: 11px;
+  text-transform: lowercase !important; 
+  font-weight: bold;
+  
+}
+
+
+.center-text{
+  text-align: center !important;
+}
+
+.center-button{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 10px 22px;
+}
+
+.a .button{
   color: #fff5e4;
-  font-size: 18px;
-  text-transform: uppercase !important; 
   font-weight: bold;
 }
+
 
 button:hover{
   opacity: 0.8;
@@ -515,8 +792,9 @@ text-align:center
   display: none;
   margin: 170px auto;
   padding: auto;
-  background: #f9f5e4;
-  color:#23446c; 
+  background: #23446c;
+  border: 2px solid #d9b0af;
+  color:#d9b0af; 
   width: 30%;
   height: 30%;
   /*position: relative;*/
@@ -524,7 +802,9 @@ text-align:center
 }
 
 .modal-content {
-  background-color: #f9f5e4;
+  background: #23446c;
+  border: 2px solid #d9b0af;
+  color:#d9b0af; 
   margin: auto;
   padding: 20px;
   width: 100%;
@@ -589,9 +869,9 @@ text-align:center
     box-shadow: 0px 0px !important;
     position: fixed;
     /*bottom: 20px;*/
-    top: 200px;
+    top: 190px;
     left: 8px;
-    z-index: 99!important;
+    z-index: 100 !important;
     width:35px;
 }
 .mapboxgl-ctrl button.mapboxgl-ctrl-zoom-in  .mapboxgl-ctrl-icon{
@@ -611,7 +891,6 @@ text-align:center
     margin-left: 2px;
     background-size: cover;
     /*bottom: 20px;*/
-    z-index: 100!important;
 }
 
 
@@ -622,8 +901,6 @@ text-align:center
     background-position: center;
     margin-left: 2px;
     margin-top:2px;
-    /*bottom: 20px;*/
-    z-index: 100!important;
 }
 
 .mapboxgl-ctrl-bottom-left{
@@ -644,30 +921,6 @@ text-align:center
   }
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .column {
-    width: 70%;
-    position:sticky !important;
-  }
-  .logo-nav {
-    width: 70% !important;
-    position:sticky !important; 
-  }
-}
-
-@media screen and (min-width: 400px) and (max-width: 900px){ 
-/*@media screen (max-width: 900px){  */
-  .column {
-    width: 50%;
-    position:sticky !important;
-  }
-  .logo-nav {
-    width: 60% !important;
-    position:sticky !important;
-  }
-}
-
 @media (max-width:1205px)
 {
   .auto
@@ -677,12 +930,14 @@ text-align:center
 {
   .modal-content{
     margin:0 10px;
-    width:auto!important
+    width:auto!important;
+    background-color: #23446c;
   }
   .modal{
     padding-top:30px}
   .dropdown-hover.mobile .dropdown-content,.dropdown-click.mobile .dropdown-content{
-    position:relative
+    position:relative;
+    background-color: #23446c;
   }	
   .hide-small{
   display:none!important
