@@ -11,8 +11,7 @@
   <!-- Google fonts-->
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <link rel="shortcut icon" href="https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2Ffavicon.ico?v=1590618126108" />
-  
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
   
     <!-- import the webpage's stylesheet -->
@@ -37,51 +36,106 @@
   
 <!-- Sidebar -->
 <div class="sidebar bar-block collapse card animate-left" style="width: 100% !important; max-width: 500px !important; display: none;" id="mySidebar">
-  <button class="transparent-button bar-item my-button large hide-large my-hide-button" style="display: inline-block !important" onclick="w3_close()">&times;</button> <div style="display: inline-block; font-size:10px; 
-  position: absolute !important; right: 0; padding-right:34px;">PT | </div><a style= "display: inline-block; font-size:10px; 
-  position: absolute !important; right: 0; padding-right:15px;" href="http://cartografiadasmemorias.xyz/en">EN</a>
+
+  <button class="transparent-button bar-item my-button large hide-large my-hide-button" style="display: inline-block !important; right: 30px!important;position: absolute !important;" onclick="w3_close()">&times;</button> 
    <br><br>
-   <img style="display: inline-block; width:10%; vertical-align:top !important" src="https://cdn.glitch.com/cc7faef1-b3a9-4ac2-8860-d76173b54f51%2FLOGO_CORES-08.png?v=1590619201597">
-   <a style="display: inline-block; color: #23446c;" href="https://bit.ly/3eT5VTn" target="_blank"> Envie um áudio com seu relato<br>21 99658-5407</a><br><br>
-      <li>Os áudios devem ter no máximo 5 minutos</li>
-      <li>Informe sua localização aproximada</li> 
-      <li>Não é necessário se identificar</li>
-      <br>
-      <hr>
-      <br>O projeto "Cartografia das memórias" tem como objetivo registrar e preservar, através de relatos orais, as memórias de vivências individuais e coletivas durante a pandemia. Você pode colaborar com o envio de seu relato e também com o compartilhamento desta iniciativa com suas redes!
-      <br><br>
-      <p>
-        Somos um grupo formado por historiadores, cientistas, artistas, comunicadores, desenvolvedores, educadores e divulgadores. Nos reunimos através do 
-        <a style="vertical-align:baseline" href="https://labdeemergencia.silo.org.br/"  target="_blank" > Laboratório de Emergência | Covid–19</a>, para trabalharmos juntos em alternativas solidárias neste contexto.
-       <br><br><br>
-       <a target="_blank" href="mailto:cartografiadasmemorias@gmail.com ">cartografiadasmemorias@gmail.com </a>
-       <br>
-       <a href="https://www.instagram.com/cartografiadasmemorias" target="_blank" class="fa fa-instagram"></a>
-       <a href="https://www.facebook.com/cartografiadasmemorias/" target="_blank" class="fa fa-facebook"></a>
-       <a href="https://soundcloud.com/cartografia-das-memorias" target="_blank" class="fa fa-soundcloud"></a>
-    </p>
-</div>
-  
-<div class="sidenav">
-    
-      <div class="menu-fixo">
-          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "media/hamburguer_rosa.png" width="100%"></button>   
+  <hr>
+      <div class="row">
+        <div class="column">
+          <a onclick="Sobre()" id="sobre-nav" style="color:#b2c9c9!important;">SOBRE</a>
+        </div>
+        <div class="column">
+         <a onclick="Termos()" id="termos-nav">TERMOS</a>
+        </div>
+        <div class="column">
+          <a onclick="Contato()" id="contato-nav">CONTATO</a>
+        </div>
       </div>
-    
-      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/recorder_rosa.png" width="100%"></a>    
-      
-     <div class="logo">
-          <img src="media/logo_cor.png" width="80%">
-     </div>
+  <hr>
+  <br>
+
+      <br><br>
+  <div id="sobre" class="sidebarmenu" style="z-index:2;">
+        Este mapa sonoro é uma iniciativa colaborativa que busca registrar e preservar, através de relatos orais, memórias de vivências pessoais du rante a pandemia da Covid-19, inicia da em 2020.
+        Você pode colaborar com o envio de seu relato e também com o compartilhamento do projeto em suas redes.
+        <br><br>
+        Desejamos alcançar o maior número e diversidade de relatos possíveis para formar um panorama heterogêneo de pontos de vistas sobre este evento de escala mundial.
+        <br><br>
+        O projeto foi criado por um grupo formado por historiadores, cientistas, artistas, comunicadores, desenvolvedores, artistas, comunicadores, desenvolvedores, educadores e divulgadores. Estes profissionais se reuniram através do Laboratório de Emergência | Covid–19, para trabalharem juntos em alternativas solidárias.
+        <br><br>
+        Este projeto é apoiado por uma doação da Open Society
+        Foundations, gerenciada pelo Centro de Direitos Humanos Aplicados – Uni- versidade de York (Reino Unido)
+        [Arte + Ativismo Contra Repressão Du- rante a Crise de Covid-19]
+  </div>
+  
+  <div id="termos" class="sidebarmenu">
+        Todos os relatos em áudio presentes nesta plataforma são licenciados pela Creative Commons e podem ser usados para diversos fins não comer- ciais, desde que atribua o devido crédito.
+  </div>
+  
+  <div id="contato" class="sidebarmenu">
+        cartografiadasmemorias@gmail.com 
+       <br>
+        <div class="center-text">
+           <a href="https://www.instagram.com/cartografiadasmemorias" target="_blank" class="fa fa-instagram"></a>
+           <a href="https://www.facebook.com/cartografiadasmemorias/" target="_blank" class="fa fa-facebook"></a>
+           <a href="https://soundcloud.com/cartografia-das-memorias" target="_blank" class="fa fa-soundcloud"></a>
+        </div>  
+  </div>
 
 </div>
+
+  
+<div class="sidenav">  
+      <div class="menu-fixo">
+          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "media/hamburguer_rosa.png" width="100%"></button>   
+      </div>  
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/recorder_rosa.png" width="100%"></a>    
+     
+    <div class="logo">
+          <img src="media/logo_cor.png" width="80%">
+     </div>
+  
+    <div class="lang">
+      PT<br><br>
+      <a href="http://cartografiadasmemorias.xyz/en" style="font-weight: bold;text-decoration: none;color: #23446c !important;">EN</a>
+    </div>
+  
+</div>
+
+<div class="sidenav-top">  
+      <div class="menu-fixo">
+          <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "media/hamburguer_rosa.png" width="100%"></button>   
+      </div>  
+     
+    <div class="logo">
+          <img src="media/logo_cor.png" width="80%">
+     </div>
+ 
+</div>  
+  
+<div class="sidenav-bottom">  
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/recorder_rosa.png" width="100%"></a>    
+    <div class="text-right">
+      <b> Grave seu Relato</b>  
+   </div>
+   <div class="lang-mobile">
+      PT | <a href="http://cartografiadasmemorias.xyz/en" style="font-weight: bold;text-decoration: none;color: #23446c !important;">EN</a>    
+    </div>
+ 
+   
+  
+</div>    
+  
+      <div class="loadpopup" onclick="myFunction()">
+        <span class="loadpopuptext" id="myPopup"><p style="text-align:right;">x</p><img style="width:40px;" src="media/gota_alta.png"><br><br>Grave aqui o <br> seu relato,<br> ele é importante<br>para a construção <br>da nossa memória.</span>
+      </div>
 
  
 <div id="recorderpopup1" class="recorderoverlay">
 	<div class="recorderpopup">     
     <a class="recorderclose" id="closeButton" href="#" onclick="fechar()">&times;</a>
     <div class="recordercontent" id="recordermsg">
-      <h2 id="mensagem"></h2><!--O Js preenche esse campo com a mensagem de retorno da operacao de gravacao-->
+      <p id="mensagem"></p><!--O Js preenche esse campo com a mensagem de retorno da operacao de gravacao-->
     </div>
     <div class="recordercontent" id="recorderinitinstructions">
       <br>
@@ -89,27 +143,31 @@
       <p>Não é necessário se identificar.</p>
       <p>Para adicionarmos seu relato ao mapa sonoro informe sua localidade: cidade e bairro, ou permita que o seu dispositivo acesse sua localização.</p>
       <p>Ao enviar o áudio você concorda com os termos e autoriza o uso não-comercial de seu relato.</p>
-      <button onclick="step(1)">Próximo</button>
+      <br><br>
+      <button class="center-button" onclick="step(1)">Próximo &gt;</button>
     </div>
 		<div class="recordercontent" id="recorderinstructions" hidden>
-      <br><h2 id="msgstart">Clique para gravar</h2>
-      <br><h2 id="msgstop" hidden>Clique para finalizar</h2>
+      <br><p class="center-text" id="msgstart">Clique para GRAVAR</p>
+      <br><p class="center-text" id="msgstop" hidden>Clique para finalizar</p>
        <div id="controls">
          <button class="transparent-button"  id="recordButton"><img src="media/rec.png"  class="center"></button>
          <button class="transparent-button" id="stopButton" hidden><img src="media/rec_gif.gif"  class="center"></button>
       </div>
-      <h1 id="counter">00:00</h1>
-      <h2 id="msgmax">(máx. 5 minutos)</h2>
+      <h2  class="center-text" id="counter">00:00</h2>
+      <p  class="center-text" id="msgmax">(máx. 5 minutos)</p>
     </div>
     <div class="recordercontent" id="recorderlocation" hidden>
-     <label>Cidade:</label></br>
-     <input id="cidade" type="text"></input></br>
-     <label>Bairro:</label></br>
-     <input id="bairro" type="text"></input><br><br>
-     <button onclick="step(2)">Próximo</button>
+     <br>
+     <label>Cidade:</label><br>
+     <input style="width: 70%; background-color:transparent!important;border:0px;border-bottom: 1px solid #d9b0af" id="cidade" type="text"></input><br>
+     <br><br>
+     <label>Bairro:</label><br>
+     <input style="width: 70%; background-color:transparent!important;border:0px;border-bottom: 1px solid #d9b0af" id="bairro" type="text"></input><br><br>
+     <br><br>
+     <button class="center-button" onclick="step(2)">Próximo > </button>
     </div>
     <div class="recordercontent" id="permissaomicrofone" hidden>
-      <h2 id="microfonenegado">Altere a permissão de seu microfone para permitir que nosso gravador possa acessá-lo. Recarregue a página e tente novamente.</h2>
+      <p id="microfonenegado">Altere a permissão de seu microfone para permitir que nosso gravador possa acessá-lo. Recarregue a página e tente novamente.</p>
     </div>
     <ul style="list-style: none;" id="recordingsList"></ul>
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
@@ -319,6 +377,11 @@ function w3_open() {
 
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
+}
+  
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
 </script>
 
