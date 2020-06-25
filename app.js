@@ -132,6 +132,7 @@ function createDownloadLink(blob) {
 	//add controls to the <audio> element
 	au.controls = true;
 	au.src = url;
+  au.style.width = "80%";
 
 	//save to disk link
 	//link.href = url;
@@ -139,7 +140,7 @@ function createDownloadLink(blob) {
 	//link.innerHTML = "Save to disk";
 
 	//Define id para o elemento da lista. 
-	li.id = "elemento_audio";
+  li.id = "elemento_audio";
 
 	//add the new audio element to li
 	li.appendChild(au);
@@ -168,6 +169,7 @@ function createDownloadLink(blob) {
 	})
 
 	//add reset to the li
+  mensagem.innerHTML = "ESCUTAR RELATO";
 	li.appendChild(reset);
 
 

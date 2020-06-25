@@ -200,7 +200,7 @@ outline: none !important;
 
 .logo-nav{
   width:33%; 
-  padding: 25px, 5px !important; 
+  padding: 45px, 5px !important; 
 }
 
 
@@ -301,8 +301,30 @@ outline: none !important;
   font-size: 13px !important;
 }
 
-.recordercontent{
-  padding: 20px 50px;
+
+@media screen and (max-width: 700px){ 
+
+.recorderpopup {
+  margin: 100px auto;
+  padding: 10px;
+  background: #23446c;
+  border: 2px solid #d9b0af;
+  color:#d9b0af; 
+  width: 500px;
+  height: 450px !important;
+  position: relative;
+  transition: all 5s ease-in-out;
+  font-weight: bold;
+  font-size: 13px !important;
+}
+
+}
+#recorderinitinstructions{
+  text-align:left !important;
+}
+
+#recorderlocation{
+  text-align:left !important;
 }
 
 
@@ -319,13 +341,28 @@ outline: none !important;
   display: block;
   position: fixed !important;
   width: 50px !important;
-  left: 15px;
-  bottom: 15px !important;
+  left: 28px;
+  bottom: 35px !important;
   /*right: 15px;*/
+}
+
+.logo_h{
+  display: block;
+  position: fixed !important;
+  z-index:100;
+  width: 50px !important;
+  right: 200px;
+  top: 25px !important;
 }
 
 @media screen and (max-width: 700px){ 
     .logo{
+      display: none;
+    }
+}
+
+@media screen and (min-width: 700px){ 
+    .logo_h{
       display: none;
     }
 }
@@ -542,7 +579,7 @@ outline: none !important;
   cursor: pointer; /* Add a mouse pointer on hover */
   background-color: transparent;
   border: 0px;
-  top: 120px !important;
+  top: 110px !important;
   left: 14px;
   width: 40px;
 }
@@ -571,11 +608,11 @@ outline: none !important;
   border: solid 1px #23446c;
   background-color: #981f3a;
   color: #f9f5e4 ;
-  padding: 20px;
+  padding: 15px;
   text-align: left;
   position: absolute;
   z-index: 11 !important;
-  top: 95px !important;
+  top: 75px !important;
   left: 155px;
   margin-left: -80px;
 }
@@ -610,7 +647,6 @@ button{
   font-size: 11px;
   text-transform: lowercase !important; 
   font-weight: bold;
-  
 }
 
 
@@ -694,17 +730,25 @@ ol {
 
 ul {
     padding-inline-start: 0px !important;
+    margin-left: 35px;
 }
 
 
 
 #controls {
-  display: flex;
-  top: 12px !important;
-  margin-top: 2rem;
-  max-width: 28em;
 } 
 
+
+#reset{
+ }
+
+#upload{
+  }
+
+#elemento_audio .audio{
+  text-align: center !important;
+  width: 30px !important;
+}
 
 #formats {
   margin-top: 0.5rem;
@@ -869,7 +913,7 @@ text-align:center
     box-shadow: 0px 0px !important;
     position: fixed;
     /*bottom: 20px;*/
-    top: 190px;
+    top: 175px;
     left: 8px;
     z-index: 100 !important;
     width:35px;

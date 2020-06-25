@@ -70,6 +70,10 @@
   
   <div id="termos" class="sidebarmenu">
         Todos os relatos em áudio presentes nesta plataforma são licenciados pela Creative Commons e podem ser usados para diversos fins não comer- ciais, desde que atribua o devido crédito.
+        <br><br><br><br>   
+      <div class="center-text">
+        <img src="media/cc.png" width="50%">
+      </div>
   </div>
   
   <div id="contato" class="sidebarmenu">
@@ -89,10 +93,10 @@
       <div class="menu-fixo">
           <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "media/hamburguer_rosa.png" width="100%"></button>   
       </div>  
-      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/recorder_rosa.png" width="100%"></a>    
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/rec_azul.png" width="100%"></a>    
      
     <div class="logo">
-          <img src="media/logo_cor.png" width="80%">
+          <img src="media/logo_pt_v.png" width="37%">
      </div>
   
     <div class="lang">
@@ -107,14 +111,14 @@
           <button class="transparent-button my-button teal xlarge hide-large" onclick="w3_open()"><img src= "media/hamburguer_rosa.png" width="100%"></button>   
       </div>  
      
-    <div class="logo">
-          <img src="media/logo_cor.png" width="80%">
+    <div class="logo_h">
+          <img src="https://cdn.glitch.com/471483de-9816-4234-863a-51f772918f7e%2Flogo_pt_h.png?v=1593025666793" width="450%">
      </div>
  
 </div>  
   
 <div class="sidenav-bottom">  
-      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/recorder_rosa.png" width="100%"></a>    
+      <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/rec_azul.png" width="100%"></a>    
     <div class="text-right">
       <b> Grave seu Relato</b>  
    </div>
@@ -127,7 +131,7 @@
 </div>    
   
       <div class="loadpopup" onclick="myFunction()">
-        <span class="loadpopuptext" id="myPopup"><p style="text-align:right;">x</p><img style="width:40px;" src="media/gota_alta.png"><br><br>Grave aqui o <br> seu relato,<br> ele é importante<br>para a construção <br>da nossa memória.</span>
+        <span class="loadpopuptext" id="myPopup"><p style="text-align:right; margin:0px;">x</p><img style="width:40px;" src="media/gota_alta.png"><br><br>Grave aqui o <br> seu relato,<br> ele é importante<br>para a construção <br>da nossa memória.</span>
       </div>
 
  
@@ -149,22 +153,26 @@
 		<div class="recordercontent" id="recorderinstructions" hidden>
       <br><p class="center-text" id="msgstart">Clique para GRAVAR</p>
       <br><p class="center-text" id="msgstop" hidden>Clique para finalizar</p>
-       <div id="controls">
-         <button class="transparent-button"  id="recordButton"><img src="media/rec.png"  class="center"></button>
-         <button class="transparent-button" id="stopButton" hidden><img src="media/rec_gif.gif"  class="center"></button>
+       <div id="controls" class="center-text">
+         <button class="transparent-button"  id="recordButton"><img src="media/gravar.png" class="center center-text" style="width:100%"></button>
+         <button class="transparent-button" id="stopButton" hidden><img src="media/parar.png"  class="center center-text" style="width:73%"></button>
       </div>
       <h2  class="center-text" id="counter">00:00</h2>
       <p  class="center-text" id="msgmax">(máx. 5 minutos)</p>
     </div>
     <div class="recordercontent" id="recorderlocation" hidden>
      <br>
-     <label>Cidade:</label><br>
-     <input style="width: 70%; background-color:transparent!important;border:0px;border-bottom: 1px solid #d9b0af" id="cidade" type="text"></input><br>
-     <br><br>
-     <label>Bairro:</label><br>
-     <input style="width: 70%; background-color:transparent!important;border:0px;border-bottom: 1px solid #d9b0af" id="bairro" type="text"></input><br><br>
-     <br><br>
-     <button class="center-button" onclick="step(2)">Próximo > </button>
+     <div>
+         <p>Informe sua localização</p>
+         <br><br>
+         <label>Cidade:</label><br>
+         <input style="width: 70%; background-color:transparent!important;border:0px;border-bottom: 1px solid #d9b0af" id="cidade" type="text"></input><br>
+         <br><br>
+         <label>Bairro:</label><br>
+         <input style="width: 70%; background-color:transparent!important;border:0px;border-bottom: 1px solid #d9b0af" id="bairro" type="text"></input><br><br>
+         <br><br><br><br>
+         <button class="center-button" onclick="step(2)">Próximo > </button>
+    </div>
     </div>
     <div class="recordercontent" id="permissaomicrofone" hidden>
       <p id="microfonenegado">Altere a permissão de seu microfone para permitir que nosso gravador possa acessá-lo. Recarregue a página e tente novamente.</p>
