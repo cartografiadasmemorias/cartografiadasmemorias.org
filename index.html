@@ -35,20 +35,20 @@
 <div id="map"></div>
   
 <!-- Sidebar -->
-<div class="sidebar bar-block collapse card animate-left" style="width: 100% !important; max-width: 500px !important; display: none;" id="mySidebar">
+<div class="sidebar bar-block collapse card animate-left" style="width: 100% !important; max-width: 550px !important; display: none;" id="mySidebar">
 
   <button class="transparent-button bar-item my-button large hide-large my-hide-button" style="display: inline-block !important; right: 30px!important;position: absolute !important;" onclick="w3_close()">&times;</button> 
    <br><br>
   <hr>
       <div class="row">
-        <div class="column">
+        <div class="column" style="text-align:left!important;">
           <a onclick="Sobre()" id="sobre-nav" style="color:#b2c9c9!important;">SOBRE</a>
         </div>
-        <div class="column">
-         <a onclick="Termos()" id="termos-nav">TERMOS</a>
+        <div class="column" style="text-align:center!important;">
+         <a onclick="Termos()" id="termos-nav" >TERMOS	&nbsp;	&nbsp;</a>
         </div>
-        <div class="column">
-          <a onclick="Contato()" id="contato-nav">CONTATO</a>
+        <div class="column" style="text-align:right!important;">
+          <a onclick="Contato()" id="contato-nav" >CONTATO</a>
         </div>
       </div>
   <hr>
@@ -56,17 +56,37 @@
 
       <br><br>
   <div id="sobre" class="sidebarmenu" style="z-index:2;">
-        Este mapa sonoro é uma iniciativa colaborativa que busca registrar e preservar, através de relatos orais, memórias de vivências pessoais du rante a pandemia da Covid-19, inicia da em 2020.
+        <br><br>
+        Este mapa sonoro é uma iniciativa colaborativa que busca registrar e preservar, através de relatos orais, memórias de vivências pessoais durante a pandemia da Covid-19, iniciada em 2020.
         Você pode colaborar com o envio de seu relato e também com o compartilhamento do projeto em suas redes.
-        <br><br>
+        <br><p></p>
         Desejamos alcançar o maior número e diversidade de relatos possíveis para formar um panorama heterogêneo de pontos de vistas sobre este evento de escala mundial.
+        <br><p></p>
+        O projeto foi criado por um grupo formado por historiadores, cientistas, artistas, comunicadores, desenvolvedores, artistas, comunicadores, desenvolvedores, educadores e divulgadores. Estes profissionais se reuniram através do <a href="https://labdeemergencia.silo.org.br" target="_blank">Laboratório de Emergência | Covid–19</a> para trabalharem juntos em alternativas solidárias.
+        <br><p></p>
+        Este projeto é apoiado por uma doação da Open Society Foundations, gerenciada pelo Centro de Direitos Humanos Aplicados – Universidade de York (Reino Unido)
+        [Arte + Ativismo Contra Repressão Durante a Crise de Covid-19].
+        <br><br><p></p>
+        <b>EQUIPE | Colaboradoras</b>
+        <br>Keila Zaché
+        <br>Beatriz Viana
+        <br><a href="https://claricelacerda.com" style="color:#23446c;" target="_blank">Clarice G. Lacerda</a>
+        <br>Hércules da Silva Xavier Ferreira
+        <br><a href="http://soundcloud.com/jjjulianar" style="color:#23446c;" target="_blank">Juliana R.</a>
+        <br><a href="https://touca.ninja" style="color:#23446c;" target="_blank">Sara Lana</a>
+        <br>Victor 
         <br><br>
-        O projeto foi criado por um grupo formado por historiadores, cientistas, artistas, comunicadores, desenvolvedores, artistas, comunicadores, desenvolvedores, educadores e divulgadores. Estes profissionais se reuniram através do Laboratório de Emergência | Covid–19, para trabalharem juntos em alternativas solidárias.
-        <br><br>
-        Este projeto é apoiado por uma doação da Open Society
-        Foundations, gerenciada pelo Centro de Direitos Humanos Aplicados – Uni- versidade de York (Reino Unido)
-        [Arte + Ativismo Contra Repressão Du- rante a Crise de Covid-19]
+        <div class="collapsible"><b>+ Já colaboraram com o cartografias</b></div>
+          <div class="content">
+            Bernardo Baião
+            <br>Caroline Trinidade
+            <br>Clareana Aroxa
+            <br>Julia Chacur
+            <br>Wellison Silva
+          </div>
+    <br><br><br>
   </div>
+
   
   <div id="termos" class="sidebarmenu">
         Todos os relatos em áudio presentes nesta plataforma são licenciados pela Creative Commons e podem ser usados para diversos fins não comer- ciais, desde que atribua o devido crédito.
@@ -96,12 +116,12 @@
       <a class="recorder-button" data="Grave seu relato" href="#recorderpopup1"><img src="media/rec_azul.png" width="100%"></a>    
      
     <div class="logo">
-          <img src="media/logo_pt_v.png" width="37%">
+          <img src="media/logo_pt_v.png" width="45%">
      </div>
   
-    <div class="lang">
-      PT<br><br>
-      <a href="http://cartografiadasmemorias.xyz/en" style="font-weight: bold;text-decoration: none;color: #23446c !important;">EN</a>
+    <div class="lang center-text" style="font-size:12px;">
+      PT<br>
+      <a href="http://cartografiadasmemorias.xyz/en" style="font-weight:normal;text-decoration: none;color: #23446c !important;">EN</a>
     </div>
   
 </div>
@@ -123,15 +143,13 @@
       <b> Grave seu Relato</b>  
    </div>
    <div class="lang-mobile">
-      PT | <a href="http://cartografiadasmemorias.xyz/en" style="font-weight: bold;text-decoration: none;color: #23446c !important;">EN</a>    
+      PT 	&nbsp;&nbsp;<a href="http://cartografiadasmemorias.xyz/en" style="font-weight:normal;text-decoration: none;color: #23446c !important;">EN</a>    
     </div>
  
-   
-  
 </div>    
   
       <div class="loadpopup" onclick="myFunction()">
-        <span class="loadpopuptext" id="myPopup"><p style="text-align:right; margin:0px;">x</p><img style="width:40px;" src="media/gota_alta.png"><br><br>Grave aqui o <br> seu relato,<br> ele é importante<br>para a construção <br>da nossa memória.</span>
+        <span class="loadpopuptext" id="myPopup"><p style="text-align:right; margin:0px;">x</p><img style="width:55px;" src="media/gota_alta.png"><br><br>GRAVE AQUI<br>o seu relato,<br> ele é importante<br>para a construção <br>da nossa memória.</span>
       </div>
 
  
@@ -397,6 +415,23 @@ function myFunction() {
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
+</script>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 </script>
   
 </body>

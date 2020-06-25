@@ -11,6 +11,12 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{disp
 
 @font-face {
 font-family: 'Stilu';
+src: url('/stilu/Stilu-Light.otf') format('opentype');
+font-weight: 200;
+}
+
+@font-face {
+font-family: 'Stilu';
 src: url('/stilu/Stilu-Regular.otf') format('opentype');
 font-weight: normal;
 font-style: normal;
@@ -20,16 +26,22 @@ font-style: normal;
 font-family: 'Stilu';
 src: url('/stilu/Stilu-SemiBold.otf') format('opentype');
 font-weight: bold;
+}
 
+@font-face {
+font-family: 'Stilu';
+src: url('/stilu/Stilu-Bold.otf') format('opentype');
+font-weight: 800;
 }
 
 body {
   font-family: 'Stilu', helvetica, arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 17px;
+  line-height: 20px;
   letter-spacing: 0.7px;
   color: #23446c !important;
+  font-weight: normal;
 }
 }
 }
@@ -60,6 +72,7 @@ h4 {
 a{
   font-weight:bold; 
   text-decoration:none; 
+  color: #23446c !important; 
 }
 
 a:visited{
@@ -91,7 +104,7 @@ hr{
   height:0;
   overflow:visible;
   border:0;
-  border-top:1px solid #23446c;
+  border-top:0.8px solid #23446c;
   margin:20px 0
 }
 
@@ -107,6 +120,20 @@ hr{
   z-index: 100!important
 }
 
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+}
 
 .fa {
   font-size: 25px !important;
@@ -195,7 +222,6 @@ outline: none !important;
 .column {
   float: right;
   width: 33.33%;
-  text-align: center;
 }
 
 .logo-nav{
@@ -211,7 +237,7 @@ outline: none !important;
   padding:40px; 
   color:#23446c; 
   position:fixed!important;
-  z-index:0;
+  z-index:1;
   overflow:auto
 }
 
@@ -228,6 +254,7 @@ outline: none !important;
     position: absolute;
     left: 0px;
     padding: 0px 40px;
+    line-height: 25px;
     width: 100%;
     height: 600px;
     background-color: #f9f5e4;
@@ -240,19 +267,20 @@ outline: none !important;
 
 .sidebarmenu{
   position: absolute;
-  width: 400px;
-  height: 600px;
+  width: 465px;
+  height: 1300px;
   padding: 0px 40px;
   background-color: #f9f5e4;
   top: 210px;
   left: 80px;
-  z-index: -1;
+  z-index: 1;
+  line-height: 27px;
 }
 
 }
 
 .column {
-  float: center;
+  float: right;
   width: 100px;
 }
 
@@ -341,7 +369,7 @@ outline: none !important;
   display: block;
   position: fixed !important;
   width: 50px !important;
-  left: 28px;
+  left: 25px;
   bottom: 35px !important;
   /*right: 15px;*/
 }
@@ -419,7 +447,7 @@ outline: none !important;
       left: 0;
       background-color:#f9f5e4;
       padding-top: 20px;
-      z-index:0;
+      z-index:100;
     }
    .sidenav-bottom{
       height: 60px;
@@ -430,13 +458,13 @@ outline: none !important;
       padding-top: 20px;
       z-index:0;
     } 
-  .sidebar{
-
-  padding-left: 10px;
-  padding-right: 10px;
+    .sidebar{
+      padding-top:70px;
+      padding-left: 40px;
+      padding-right: 40px;
       z-index:10;
 
-}
+    }
   
     .menu-fixo {
       overflow: hidden;
@@ -464,6 +492,7 @@ outline: none !important;
       }
   
     .lang-mobile{
+        font-weight:800;
         position: absolute;
         padding-bottom:40px !important;
         padding-left: 20px;
@@ -489,15 +518,20 @@ outline: none !important;
     .loadpopup .loadpopuptext{
       visibility: visible;
       display: block;
-      width: 180px;
+      width: 300px;
       border: solid 1px #23446c;
       background-color: #981f3a;
       color: #f9f5e4 ;
-      padding: 20px;
+      font-size:18px;
+      color: #f9f5e4 ;
+      letter-spacing:2px;
+      line-height: 27px;
       text-align: left;
+      padding: 30px;
+      padding-top: 20px;
       position: fixed;
-      z-index: 11 !important;
-      bottom: 60px !important;
+      z-index: 0 !important;
+      bottom: 80px !important;
       right: 45px;
       margin-left: -80px;
     }
@@ -524,7 +558,7 @@ outline: none !important;
 
 @media screen and (min-width: 700px){ 
   
-  a[data]:hover:after {
+  /*a[data]:hover:after {
   content: attr(data);
   padding: 4px 8px;
   color: #f9f5e4;
@@ -538,7 +572,7 @@ outline: none !important;
   border-color:#f9f5e4;
   background: #981f3a;
   opacity: 1 !important;
-}
+}*/
   
   .sidenav {
     height: 100%;
@@ -559,8 +593,8 @@ outline: none !important;
   }
   
   .sidebar{
-  padding-left: 80px;
-  padding-right: 10px;
+    padding-left: 120px;
+    padding-right: 40px;
 }
   
   
@@ -585,7 +619,9 @@ outline: none !important;
 }
   
   .lang{
-    padding-left:25px; 
+    font-weight: 800;
+    font-size:  !important;
+    padding-left:5px; 
     padding-top:270px;
   }
 
@@ -604,16 +640,20 @@ outline: none !important;
 
 .loadpopup .loadpopuptext{
   visibility: visible;
-  width: 180px;
+  width: 300px;
   border: solid 1px #23446c;
   background-color: #981f3a;
+  font-size:18px;
   color: #f9f5e4 ;
-  padding: 15px;
+  letter-spacing:2px;
+  line-height: 27px;
+  padding: 30px;
+  padding-top: 20px;
   text-align: left;
   position: absolute;
-  z-index: 11 !important;
+  z-index: 0 !important;
   top: 75px !important;
-  left: 155px;
+  left: 170px;
   margin-left: -80px;
 }
 
@@ -915,7 +955,7 @@ text-align:center
     /*bottom: 20px;*/
     top: 175px;
     left: 8px;
-    z-index: 100 !important;
+    z-index:100;
     width:35px;
 }
 .mapboxgl-ctrl button.mapboxgl-ctrl-zoom-in  .mapboxgl-ctrl-icon{
@@ -935,6 +975,7 @@ text-align:center
     margin-left: 2px;
     background-size: cover;
     /*bottom: 20px;*/
+    z-index: 100;
 }
 
 
@@ -945,6 +986,7 @@ text-align:center
     background-position: center;
     margin-left: 2px;
     margin-top:2px;
+    z-index: 100;
 }
 
 .mapboxgl-ctrl-bottom-left{
