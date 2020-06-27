@@ -78,6 +78,8 @@ function startRecording() {
 		//Zera e inicia o cronômetro na sequencia
 		stop();
 		start();
+		closeButton = document.getElementById("closeButton");
+		closeButton.hidden = true;
 
 	}).catch(function (err) {
 		//enable the record button if getUserMedia() fails
@@ -85,7 +87,6 @@ function startRecording() {
 		permissaomicrofone.hidden = false;//exibe msg caso a pessoa bloqueie o microfone
 		recorderinstructions.hidden = true;//Exibe gravador e demais elementos vinculados a ele
 		mic = false;
-		closeButton.hidden = false;
 	});
 }
 
@@ -116,6 +117,7 @@ function stopRecording() {
 	stopButton.hidden = true;
 	msgmax.hidden = true;
 	msgstop.hidden = true;
+	closeButton.hidden = false;
 }
 
 function createDownloadLink(blob) {
@@ -132,7 +134,7 @@ function createDownloadLink(blob) {
 	//add controls to the <audio> element
 	au.controls = true;
 	au.src = url;
-  au.style.width = "80%";
+ 	 au.style.width = "80%";
 
 	//save to disk link
 	//link.href = url;
@@ -140,7 +142,7 @@ function createDownloadLink(blob) {
 	//link.innerHTML = "Save to disk";
 
 	//Define id para o elemento da lista. 
-  li.id = "elemento_audio";
+ 	 li.id = "elemento_audio";
 
 	//add the new audio element to li
 	li.appendChild(au);
@@ -153,7 +155,8 @@ function createDownloadLink(blob) {
 
 	//Regravar áudio
 	var reset = document.createElement('button');
-	reset.innerHTML = "Gravar Novamente";
+	reset.innerHTML = "<img src=\"media/retry.png\"/> GRAVAR NOVAMENTE";
+	//reset.innerHTML = "Gravar Novamente";
 	reset.id = "reset";
 	reset.addEventListener("click", function (event) {
 		li.removeChild(au);
@@ -170,13 +173,14 @@ function createDownloadLink(blob) {
 
 	//add reset to the li
   mensagem.innerHTML = "ESCUTAR RELATO";
+  mensagem.hidden = false;
 	li.appendChild(reset);
 
 
 	//upload link
 	var upload = document.createElement('button');
 	//upload.href="#";
-	upload.innerHTML = "Enviar";
+	upload.innerHTML = "<img src=\"media/gota_final.png\"/> ENVIAR RELATO";
 	upload.id = "upload";
 	upload.addEventListener("click", function (event) {
 		enviar();
@@ -228,7 +232,6 @@ function enviar() {
 	upload.hidden = true;
 	recordingsList.hidden = true;
 	enviado = true;
-	closeButton.hidden = false;
 
 	//Limpa a recordingsList
 	var li = document.getElementById("recordingsList");
@@ -257,7 +260,6 @@ function getPosition(position) {
 function step(param){
 	if (param == 1){
 		const x =  this.getLocation();
-		closeButton.hidden = true;
 	} else if (param == 2){
 		resetRecorder();
 		recorderlocation.hidden = true; //esconde formulario cidade-bairro
@@ -268,7 +270,14 @@ function step(param){
 
 // When the user clicks on <span> (x), close the modal
 function fechar() {
-	if (mic != false && enviado == true) {
+	if (mic != false) {
+		//Limpa a recordingsList
+		var li = document.getElementById("recordingsList");
+
+		while (li.firstChild) {
+			li.removeChild(li.firstChild);
+		}
+
 		recorderinitinstructions.hidden = false;
 		recorderinstructions.hidden = true;
 		permissaomicrofone.hidden = true;
