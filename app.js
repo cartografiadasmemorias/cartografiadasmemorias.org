@@ -134,7 +134,8 @@ function createDownloadLink(blob) {
 	//add controls to the <audio> element
 	au.controls = true;
 	au.src = url;
- 	 au.style.width = "80%";
+ 	au.style.width = "80%";
+ 	au.style.textAlign = "center";
 
 	//save to disk link
 	//link.href = url;
@@ -155,7 +156,7 @@ function createDownloadLink(blob) {
 
 	//Regravar áudio
 	var reset = document.createElement('button');
-	reset.innerHTML = "<img src=\"media/retry.png\"/> GRAVAR NOVAMENTE";
+	reset.innerHTML = "<img src=\"/media/gravar_novamente.png\"/ style='width:90%;  display:inline;'>";
 	//reset.innerHTML = "Gravar Novamente";
 	reset.id = "reset";
 	reset.addEventListener("click", function (event) {
@@ -172,7 +173,7 @@ function createDownloadLink(blob) {
 	})
 
 	//add reset to the li
-  mensagem.innerHTML = "ESCUTAR RELATO";
+  mensagem.innerHTML = "<br>ESCUTAR RELATO";
   mensagem.hidden = false;
 	li.appendChild(reset);
 
@@ -180,7 +181,7 @@ function createDownloadLink(blob) {
 	//upload link
 	var upload = document.createElement('button');
 	//upload.href="#";
-	upload.innerHTML = "<img src=\"media/gota_final.png\"/> ENVIAR RELATO";
+	upload.innerHTML = "<img src=\"/media/enviar_relato.png\"/  style='width:70%; display:inline'>";
 	upload.id = "upload";
 	upload.addEventListener("click", function (event) {
 		enviar();
@@ -210,7 +211,7 @@ function enviar() {
 			//mensagem.innerHTML = e.target.statusText;
 			mensagem.innerHTML = "Agradecemos sua contribuição. Seu relato será adicionado ao mapa sonoro de memórias sobre a pandemia da Covid-19.";
 		}else {
-			mensagem.innerHTML = "Ops! Houve algum problema. Tente novamente!";
+			mensagem.innerHTML = "<br><br><br><br>Ops! Houve algum problema. Tente novamente!";
 		}
 	};
 	var fd = new FormData();
