@@ -154,6 +154,9 @@ function createDownloadLink(blob) {
 	//add the save to disk link to li
 	//li.appendChild(link);
 
+	mensagem.innerHTML = "<br>ESCUTAR RELATO";
+	mensagem.hidden = false;
+
 	//Regravar áudio
 	var reset = document.createElement('button');
 	reset.innerHTML = "<img src=\"media/gravar_novamente.png\"/ style='width:90%;  display:inline;'>";
@@ -169,12 +172,11 @@ function createDownloadLink(blob) {
 		msgstart.hidden = false;
 		msgstop.hidden = true;
 		msgmax.hidden = false;
+		mensagem.hidden = true;
 		//window.location.href = '#';
 	})
 
 	//add reset to the li
-  mensagem.innerHTML = "<br>ESCUTAR RELATO";
-  mensagem.hidden = false;
 	li.appendChild(reset);
 
 
