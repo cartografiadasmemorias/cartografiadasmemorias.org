@@ -210,16 +210,18 @@ function enviar() {
 	xhr.onreadystatechange = function (e) {
 		var msgConfirm = document.getElementById("msgConfirm");
 		var msgError = document.getElementById("msgError");
+		var msgLoading = document.getElementById("msgLoading");
+		var socialMedia = document.getElementById("socialMedia");
 
 		if (e.target.readyState === 4 && e.target.status === 200) {
-			
 			//msgConfirm.innerHTML = e.target.statusText;
 			msgConfirm.hidden = false;
-			msgError.hidden = true;
-		}else {
-			
-			msgError.hidden = false;
+			socialMedia.hidden = false;
+			msgLoading.hidden = true;
+		} else {
+			msgLoading.hidden = false;
 			msgConfirm.hidden = true;
+			socialMedia.hidden = true;
 		}
 	};
 	var fd = new FormData();
