@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
   <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
@@ -157,8 +157,7 @@
       <div class="loadpopup" onclick="myFunction()">
         <span class="loadpopuptext" id="myPopup"><p style="text-align:right; margin:0px;">x</p><img style="width:55px;" src="media/gota_alta.png"><br><br>GRAVE AQUI<br>o seu relato,<br> ele é importante<br>para a construção <br>da nossa memória.</span>
       </div>
-
- 
+  
 <div id="recorderpopup1" class="recorderoverlay">
 	<div class="recorderpopup">     
     <a class="recorderclose" id="closeButton" href="#" onclick="fechar()">&times;</a>
@@ -350,18 +349,7 @@
 
             var bbox = turf.bbox(data);
             map.fitBounds(bbox, { padding: 50 });
- 
-            
-            /*map.setPaintProperty('csvData', 'circle-radius', 
-            ['interpolate', ['linear'], ['zoom'],
-              5,
-              5,
-              20,
-              25,
-              24,
-              30
-            ]);*/
-            
+
             map.setLayoutProperty('csvData', 'icon-size', 
             ['interpolate', ['linear'], ['zoom'],
               0,
@@ -387,18 +375,7 @@
     });
     
 
-      map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-      map.addControl(geocoder);
-      document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-      document.getElementById('zoom').addEventListener('click', function() {
-        map.zoomTo(19, { duration: 9000 });
-      });
-
-
-        function render(feature){
-            return `<span class='geocoder-menu-item'>${feature.place_name}</span>`
-        }
-      
+      map.addControl(new mapboxgl.NavigationControl(), 'top-left');      
     
   </script>
 
