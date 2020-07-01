@@ -202,18 +202,24 @@ function createDownloadLink(blob) {
 
 function enviar() {
 	recorderinstructions.hidden = true;//Esconde as instrucoes de gravação para que apenas o retorno do envio seja exibido
-	mensagem.hidden = false;//Exibe mensagem de agradecimento/confirmacao
+	mensagem.hidden = true;//Exibe mensagem de agradecimento/confirmacao
 
 	var bairro = document.getElementById("bairro");
 	var cidade = document.getElementById("cidade");
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function (e) {
-		var mensagem = document.getElementById("mensagem");
+		var msgConfirm = document.getElementById("msgConfirm");
+		var msgError = document.getElementById("msgError");
+
 		if (e.target.readyState === 4 && e.target.status === 200) {
-			//mensagem.innerHTML = e.target.statusText;
-			mensagem.innerHTML = "Agradecemos sua contribuição. Seu relato será adicionado ao mapa sonoro de memórias sobre a pandemia da Covid-19.";
+			
+			//msgConfirm.innerHTML = e.target.statusText;
+			msgConfirm.hidden = false;
+			msgError.hidden = true;
 		}else {
-			mensagem.innerHTML = "<br><br><br><br>Ops! Houve algum problema. Tente novamente!";
+			
+			msgError.hidden = false;
+			msgConfirm.hidden = true;
 		}
 	};
 	var fd = new FormData();
@@ -267,7 +273,6 @@ function step(param){
 		resetRecorder();
 		recorderlocation.hidden = true; //esconde formulario cidade-bairro
 		recorderinitinstructions.hidden = true;
-		//recorderinstructions.hidden = false;	
 	}
 }
 
@@ -285,6 +290,9 @@ function fechar() {
 		recorderinstructions.hidden = true;
 		permissaomicrofone.hidden = true;
 		mensagem.hidden = true;
+		recorderlocation.hidden = true;
+		msgError.hidden = true;
+		msgConfirm.hidden = true;
 	}
 }
 
