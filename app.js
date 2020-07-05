@@ -154,7 +154,7 @@ function createDownloadLink(blob) {
 	//add the save to disk link to li
 	//li.appendChild(link);
 
-	mensagem.innerHTML = "<br>ESCUTAR RELATO";
+	mensagem.innerHTML = "<br>ESCUTAR RELATO | LISTEN TO YOUR TESTIMONIAL";
 	mensagem.hidden = false;
 
 	//Regravar áudio
