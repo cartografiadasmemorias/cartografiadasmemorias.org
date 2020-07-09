@@ -24,7 +24,7 @@ echo "Permission:".$permission."\n";
 if ($permission === "true"){
     echo("Latitude: $latitude \n");
     echo("Longitude: $longitude \n");
-    $loc = "__".$longitude.",".$latitude;
+    $loc = "__".$latitude.",".$longitude;
 }else{
     echo("Bairro: $bairro \n");
     echo("Cidade: $cidade \n");
