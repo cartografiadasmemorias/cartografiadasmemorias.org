@@ -122,7 +122,6 @@ function stopRecording() {
 
 function createDownloadLink(blob) {
 	audio = blob;
-	var modal = document.getElementById("myModal");
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
 	var li = document.createElement('li');
