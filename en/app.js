@@ -266,14 +266,24 @@ function getPosition(position) {
 	step(2);
 }
 
-//Mexer aqui
 function step(param){
+	var bairro = document.getElementById("bairro");
+	var cidade = document.getElementById("cidade");
+	var emptylocationmsg = document.getElementById("emptylocationmsg");
+
 	if (param == 1){
 		const x =  this.getLocation();
 	} else if (param == 2){
-		resetRecorder();
-		recorderlocation.hidden = true; //esconde formulario cidade-bairro
-		recorderinitinstructions.hidden = true;
+		if (cidade.value == '' || cidade.value == null || bairro.value == '' || bairro.value == null){ 
+			emptylocationmsg.innerHTML = "(Please, fill out the fields below!)";
+			console.log("Input localização vazio");
+		}else {
+			console.log("Input localização com conteúdo");
+			resetRecorder();
+			recorderlocation.hidden = true; //esconde formulario cidade-bairro
+			recorderinitinstructions.hidden = true;
+		}
+		
 	}
 }
 
