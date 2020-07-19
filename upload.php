@@ -34,6 +34,9 @@ if ($permission === "true"){
 // Move o arquivo da pasta temporaria de upload para a pasta de destino 
 $dir = "novos_relatos/"; 
 
+echo ("File: ".$_FILES['audio_data']['name']."\n");
+echo (gettype($_FILES['audio_data']['name']));
+
 if (move_uploaded_file($input, "$dir/".$_FILES['audio_data']['name'].$loc.".wav")) { 
     echo "Arquivo enviado com sucesso! \n"; 
 } 

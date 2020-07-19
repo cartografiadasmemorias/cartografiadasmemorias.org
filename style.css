@@ -364,6 +364,12 @@ outline: none !important;
   opacity: 1;
 }
 
+#emptylocationmsg {
+  color:#eb9006; 
+  font-size: 10px;
+  padding-top: 0px;
+}
+
 .recorderpopup {
   margin: 70px auto;
   padding: 30px;

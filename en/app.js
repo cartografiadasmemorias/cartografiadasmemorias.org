@@ -158,7 +158,7 @@ function createDownloadLink(blob) {
 
 	//Regravar áudio
 	var reset = document.createElement('button');
-	reset.innerHTML = "<img src=\"media/gravar_novamente.png\"/ style='width:90%;  display:inline;'>";
+	reset.innerHTML = "<img src=\"media/again.png\"/ style='width:80%;  display:inline;'>";
 	//reset.innerHTML = "Gravar Novamente";
 	reset.id = "reset";
 	reset.addEventListener("click", function (event) {
@@ -182,7 +182,7 @@ function createDownloadLink(blob) {
 	//upload link
 	var upload = document.createElement('button');
 	//upload.href="#";
-	upload.innerHTML = "<img src=\"media/enviar_relato.png\"/  style='width:70%; display:inline'>";
+	upload.innerHTML = "<img src=\"media/send.png\"/  style='width:90%; display:inline'>";
 	upload.id = "upload";
 	upload.addEventListener("click", function (event) {
 		enviar();
@@ -275,7 +275,7 @@ function step(param){
 		const x =  this.getLocation();
 	} else if (param == 2){
 		if (cidade.value == '' || cidade.value == null || bairro.value == '' || bairro.value == null){ 
-			emptylocationmsg.innerHTML = "(O preenchimento dos campos abaixo é obrigatório!)";
+			emptylocationmsg.innerHTML = "(Please, fill out the fields below!)";
 			console.log("Input localização vazio");
 		}else {
 			console.log("Input localização com conteúdo");
