@@ -14,6 +14,7 @@ var audio;
 var position;
 var mic;
 var enviado = false;
+var permissaolocalizacao;
 
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
@@ -153,7 +154,7 @@ function createDownloadLink(blob) {
 	//add the save to disk link to li
 	//li.appendChild(link);
 
-	mensagem.innerHTML = "<br>ESCUTAR RELATO | LISTEN TO YOUR TESTIMONIAL";
+	mensagem.innerHTML = "<br>ESCUTAR RELATO";
 	mensagem.hidden = false;
 
 	//Regravar áudio
@@ -263,6 +264,7 @@ function getPosition(position) {
 
 	this.position = position;
 	//Após coletar as coordenadas segue para a tela do gravador
+	permissaolocalizacao = true;
 	step(2);
 }
 
@@ -274,7 +276,7 @@ function step(param){
 	if (param == 1){
 		const x =  this.getLocation();
 	} else if (param == 2){
-		if (cidade.value == '' || cidade.value == null || bairro.value == '' || bairro.value == null){ 
+		if ((cidade.value == '' || cidade.value == null || bairro.value == '' || bairro.value == null) && permissaolocalizacao == false){ 
 			emptylocationmsg.innerHTML = "(O preenchimento dos campos abaixo é obrigatório!)";
 			console.log("Input localização vazio");
 		}else {
@@ -317,6 +319,7 @@ function resetRecorder(){
 }
 
 function showError(error) {
+	permissaolocalizacao = false;
 	var loc = document.getElementById("recorderlocation");
 	switch (error.code) {
 		case error.PERMISSION_DENIED:
